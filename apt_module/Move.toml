@@ -1,0 +1,21 @@
+[package]
+name = "leofi_module"
+version = "1.0.0"
+authors = []
+
+[addresses]
+leofi_module = '_'
+admin_addr = '_'
+
+[dev-addresses]
+leofi_module = '0x9d1aea3bd71ed205ef95b1be94710ea955e89da0da9c5f0d1c519cccff736983'
+admin_addr = '0xabc'
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "testnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.Liquidswapv05]
+git = 'https://github.com/pontem-network/liquidswap_v05.git'
+rev = 'v05-main'
