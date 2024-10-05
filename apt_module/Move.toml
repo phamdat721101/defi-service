@@ -4,18 +4,18 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-leofi_module = '_'
-admin_addr = '_'
+leofi_module = 'f1a29176e0690487a0d8e10aec8d681935fe678ddc96165800d5f6f2b25b0c6f'
+admin_addr = '0xe8ec9945a78a48452def46207e65a0a4ed6acd400306b977020924ae3652ab85'
 
 [dev-addresses]
-leofi_module = '0x9d1aea3bd71ed205ef95b1be94710ea955e89da0da9c5f0d1c519cccff736983'
-admin_addr = '0xabc'
+leofi_module = 'f1a29176e0690487a0d8e10aec8d681935fe678ddc96165800d5f6f2b25b0c6f'
+admin_addr = '0xe8ec9945a78a48452def46207e65a0a4ed6acd400306b977020924ae3652ab85'
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "testnet"
+rev = "mainnet"
 subdir = "aptos-move/framework/aptos-framework"
 
 [dependencies.Liquidswapv05]
 git = 'https://github.com/pontem-network/liquidswap_v05.git'
-rev = 'v05-main'
+rev = 'testnet'

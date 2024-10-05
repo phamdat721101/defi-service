@@ -1,0 +1,56 @@
+services:
+  worker:
+    container_name: worker
+    depends_on:
+      db:
+        condition: service_healthy
+    # image: .
+    build:
+      # context: worker
+      dockerfile: dockerfile
+    environment:
+      MODE: development
+      PGHOST: db
+      PGPORT: 5432
+      PGDATABASE: leofi
+      PGUSER: service
+      PGPASSWORD: password
+      NETWORK: testnet
+      MODULE_ADDR: 0x65e8ba18dce724d6a6b96f7e4edd18942d14f7b4cd12fd0f49cf788cb3f1f404
+    # healthcheck:
+    #   interval: 1s
+    #   timeout: 5s
+    #   retries: 20
+
+  db:
+    container_name: db
+    image: postgres:16.2-bookworm
+    environment:
+      POSTGRES_DB: leofi
+      POSTGRES_USER: service
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    healthcheck:
+      test: pg_isready -U service -d leofi
+      interval: 1s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - ./data/db:/data/postgres
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    depends_on:
+      db:
+        condition: service_healthy
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin@example.com
+    volumes:
+      - ./data/pgadmin:/var/lib/pgadmin
+    ports:
+      - 5050:80
+
