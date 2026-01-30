@@ -1,8 +1,8 @@
 {
-  "name": "walrus-backend",
+  "name": "defi-service-protocol",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Comprehensive DeFi protocol management system with TypeScript and Aptos integration",
+  "main": "dist/app.js",
   "scripts": {
     "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
@@ -11,8 +11,8 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["defi", "aptos", "blockchain", "typescript", "move", "cryptocurrency", "yield-farming", "cross-chain"],
+  "author": "phamdat721101",
   "license": "ISC",
   "dependencies": {
     "@aptos-labs/ts-sdk": "^1.28.0",
